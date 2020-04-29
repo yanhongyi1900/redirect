@@ -20,61 +20,32 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body id="bodyx">
-    <div class="hd logodiv">
-    <img src="/img/logo.png" class="logopng">
-    <p class="logot"><span class="logo_1">&lt;</span><span class="logo_2">/</span><span class="logo_3">#</span> 技术分享 <span class="logo_3">#</span><span class="logo_2">/</span><span class="logo_1">&gt;</span></p>
-</div>
-<div class="hd">
-    <ol class="breadcrumb">
-        
-            <li><a class="ba" href="/project">作品</a></li>
-        
-            <li><a class="ba" href="/domain">域名</a></li>
-        
-            <li><a class="ba" href="/links">友联</a></li>
-        
-            <li><a class="ba" href="/about">关于</a></li>
-        
-            <li><a class="ba" href="https://github.com/yanhongyi1900" target="_blank" rel="noopener">Github</a></li>
-        
-    </ol>
-    <hr class="breadcrumbhr">
-</div>
-<div class="hd">
-    
-    
-        
-        
-            <div class="titlex">
-                <p><span class="jing">#</span>
-                    2020
-                </p>
-            </div>
-            
-        
-        <a class="flink" href="/2020/04/29/base%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%9C%E7%94%A8/">
-            <div class="list">
-                <div class="postname">
-                    base标签的作用
-                </div>
-                <div class="posttime">
-                    四月 29日
-                </div>
-            </div>
-        </a>
-    
-        
-        
-        <a class="flink" href="/2020/04/28/hello-world/">
-            <div class="list">
-                <div class="postname">
-                    Hello World
-                </div>
-                <div class="posttime">
-                    四月 28日
-                </div>
-            </div>
-        </a>
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            base标签的作用
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p>在 HTML5 中，我们时常忽略<code>head</code>标签中的那些标签。</p>
+<p>在 head 中可能常用的就只有 <code>meta</code> 标签，用来提供一些有关页面的元信息，如搜索引擎和更新频率的关键词。</p>
+<p><code>base</code>的存在感实在太低，但是其在工程化项目中却很使用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">"/cms/"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>首先我们看下如果没有使用<code>base</code>标签是怎样的效果</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"egg.gif"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的图片请求的地址就是所在服务器下的地址，在本地就是<code>localhost:8080/egg.gif</code>。</p>
+<!-- 在实际开发时，有时候我们的项目并不是在根路由下，而是在一个二级目录，比如一个后台管理系统，其可能就是二级目录`localhost:8080/cms` -->
+
+<p>实际开发中，我们的静态资源可能会集中放置于另一个目录，比如在<code>/static</code>下，怎么办呢？</p>
+<p>当然我们可以修改图片的 src，图片量少还可以，但是如果很多，就是一个大工程。</p>
+<p>这时候 base 就发挥了作用。<br>我们可以在将相对路径或者绝对路径写入到 base 的 href 中，将其作为基准 url,在所有请求资源前都会加上这个基准 url。</p>
+
+    </div>
+
     
 </div>
     <div class="footer" id="footer">
